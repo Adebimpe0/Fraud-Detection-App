@@ -6,11 +6,9 @@ import numpy as np
 # -------- Load model, encoder, scaler --------
 @st.cache_resource
 def load_assets():
-    import os
-    BASE_DIR = os.path.dirname(os.path.abpath(__file__))
-    model = pickle.load(open(os.path.join(BASE_DIR, "fraud_model.pk"), "rb"))
-    encoder = pickle.load(open(os.path.join(BASE_DIR,"fraud_encoder.pk"), "rb"))  # for ProductCategory
-    scaler = pickle.load(open(os.path.join(BASE_DIR,"fraud_scaler.pk"), "rb"))
+    model = pickle.load(open("Notebook/fraud_model_files/fraud_model.pk", "rb"))
+    encoder = pickle.load(open("Notebook/fraud_model_files/fraud_encoder.pk", "rb"))  # for ProductCategory
+    scaler = pickle.load(open("Notebook/fraud_model_files/fraud_scaler.pk", "rb"))
     return model, encoder, scaler
 
 model, encoder, scaler = load_assets()
